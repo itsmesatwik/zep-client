@@ -27,8 +27,22 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Title
-st.title("Zep Query Client")
+# Load custom CSS
+def load_css():
+    with open(".streamlit/style.css") as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Apply custom CSS
+load_css()
+
+# Title with improved styling
+st.markdown("""
+<div style="background-color: #ffffff; padding: 1.5rem; border-radius: 0.5rem; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+    <h1 style="color: #9c27b0; margin: 0;">Zep Query Client</h1>
+    <p style="color: #6c757d; margin-top: 0.5rem;">Search and explore your Zep knowledge graph</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Sidebar
 st.sidebar.header("Query Configuration")
@@ -282,23 +296,35 @@ else:
     elif not selected_rerankers and run_button:
         st.warning("Please select at least one reranker.")
     elif not run_button:
-        st.info("Configure your query parameters and click 'Run Queries' to see results.")
+        st.markdown("""
+        <div style="background-color: #f3e5f5; padding: 1rem; border-radius: 0.5rem; 
+                    border-left: 5px solid #9c27b0; margin: 1rem 0;">
+            <p style="margin: 0; color: #333;">Configure your query parameters and click 'Run Queries' to see results.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 # Footer
 st.sidebar.markdown("---")
-st.sidebar.info(
-    """
-    This application allows you to query Zep's graph database with different rerankers and view the results side by side.
+st.sidebar.markdown("""
+<div style="background-color: #f9f2fa; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+    <h4 style="color: #9c27b0; margin-top: 0;">About This App</h4>
+    <p style="font-size: 0.9rem; color: #333;">
+        This application allows you to query Zep's graph database with different rerankers and view the results side by side.
+    </p>
     
-    **Rerankers:**
-    - **cross_encoder**: Uses a cross-encoder model for reranking
-    - **rrf**: Reciprocal Rank Fusion
-    - **node_distance**: Ranks by distance from a centroid node (requires centroid node)
-    - **episode_mentions**: Ranks by episode mentions
+    <h5 style="color: #9c27b0; margin-bottom: 0.5rem;">Rerankers:</h5>
+    <ul style="font-size: 0.9rem; color: #333; padding-left: 1.5rem; margin-top: 0.5rem;">
+        <li><strong>cross_encoder</strong>: Uses a cross-encoder model for reranking</li>
+        <li><strong>rrf</strong>: Reciprocal Rank Fusion</li>
+        <li><strong>node_distance</strong>: Ranks by distance from a centroid node (requires centroid node)</li>
+        <li><strong>episode_mentions</strong>: Ranks by episode mentions</li>
+    </ul>
     
-    **Scopes:**
-    - **nodes**: Search for nodes (documents)
-    - **edges**: Search for edges (facts)
-    - **both**: Search for both nodes and edges
-    """
-) 
+    <h5 style="color: #9c27b0; margin-bottom: 0.5rem;">Scopes:</h5>
+    <ul style="font-size: 0.9rem; color: #333; padding-left: 1.5rem; margin-top: 0.5rem;">
+        <li><strong>nodes</strong>: Search for nodes (documents)</li>
+        <li><strong>edges</strong>: Search for edges (facts)</li>
+        <li><strong>both</strong>: Search for both nodes and edges</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True) 

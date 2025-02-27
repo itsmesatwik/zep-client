@@ -1,0 +1,54 @@
+/* Light theme styling with red-purple colors */
+.stApp {
+    background-color: #ffffff;
+}
+
+/* Sidebar styling */
+.css-1d391kg, .css-12oz5g7 {
+    background-color: #f8f0fc;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #9c27b0;
+}
+
+/* Expander styling */
+.streamlit-expanderHeader {
+    background-color: #f9f2fa;
+    border-radius: 4px;
+}
+
+/* Button styling */
+.stButton>button {
+    background-color: #9c27b0;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.stButton>button:hover {
+    background-color: #7b1fa2;
+}
+
+/* Input fields */
+.stTextInput>div>div>input, .stTextArea>div>div>textarea {
+    border-radius: 4px;
+    border: 1px solid #e1bee7;
+}
+
+/* Slider */
+.stSlider>div>div>div {
+    background-color: #9c27b0;
+}
+
+/* Radio buttons and checkboxes */
+.stRadio>div, .stCheckbox>div {
+    background-color: transparent;
+}
+
+/* Success, info, warning, and error messages */
+.stSuccess, .stInfo, .stWarning, .stError {
+    border-radius: 4px;
+} 
