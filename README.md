@@ -2,6 +2,9 @@
 
 A Streamlit application for querying Zep's graph database with different rerankers and viewing the results side by side.
 
+<img width="2050" alt="image" src="https://github.com/user-attachments/assets/ac687976-2a0a-449b-9a34-21997c2e76c5" />
+
+
 ## Features
 
 - Query Zep's graph database with different rerankers
