@@ -80,12 +80,3 @@ The `node_distance` reranker requires a centroid node to function properly. When
 ## Troubleshooting
 
 If you encounter any issues while using the application, please refer to the [Troubleshooting Guide](TROUBLESHOOTING.md) for solutions to common problems.
-
-## Requirements
-
-- Python 3.7+
-- zep_cloud
-- openai
-- python-dotenv
-- streamlit
-- pandas 
